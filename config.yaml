@@ -1,12 +1,12 @@
 accounts:
   - name: Tibo
     handle: thsottiaux
-    url_template: "https://rsshub.app/twitter/user/{handle}"
+    url_template: "{rsshub_base_url}/twitter/user/{handle}"
 
 # Add more accounts like this:
 #  - name: OpenAI
 #    handle: OpenAI
-#    url_template: "https://rsshub.app/twitter/user/{handle}"
+#    url_template: "{rsshub_base_url}/twitter/user/{handle}"
 
 keywords:
   any:

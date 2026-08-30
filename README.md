@@ -30,7 +30,13 @@ This avoids paid X API access, but it has important limitations:
 - The feed may not include deleted posts, replies, reposts, or all metadata.
 - GitHub Actions scheduled workflows are not guaranteed to run exactly on the minute.
 
-For better reliability, self-host RSSHub and replace `url_template` in `config.yaml`, or use another public RSS/Atom-compatible feed source.
+For better reliability, self-host RSSHub and set the optional `RSSHUB_BASE_URL` secret to your instance URL, for example:
+
+```text
+RSSHUB_BASE_URL=https://your-rsshub.example.com
+```
+
+You can also replace `url_template` in `config.yaml` with another public RSS/Atom-compatible feed source.
 
 ## Local Setup
 
@@ -106,6 +112,7 @@ EMAIL_CC
 USE_LLM_CLASSIFIER
 OPENAI_API_KEY
 OPENAI_MODEL
+RSSHUB_BASE_URL
 ```
 
 Example optional LLM values:
@@ -136,10 +143,10 @@ Edit `config.yaml`:
 accounts:
   - name: Tibo
     handle: thsottiaux
-    url_template: "https://rsshub.app/twitter/user/{handle}"
+    url_template: "{rsshub_base_url}/twitter/user/{handle}"
   - name: OpenAI
     handle: OpenAI
-    url_template: "https://rsshub.app/twitter/user/{handle}"
+    url_template: "{rsshub_base_url}/twitter/user/{handle}"
 ```
 
 Each account gets its own last-seen post ID in `data/state.json`.

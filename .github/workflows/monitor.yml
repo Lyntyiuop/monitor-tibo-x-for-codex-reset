@@ -44,6 +44,7 @@ jobs:
           USE_LLM_CLASSIFIER: ${{ secrets.USE_LLM_CLASSIFIER }}
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           OPENAI_MODEL: ${{ secrets.OPENAI_MODEL }}
+          RSSHUB_BASE_URL: ${{ secrets.RSSHUB_BASE_URL }}
           CONFIG_PATH: config.yaml
           STATE_PATH: data/state.json
         run: python -m src.monitor

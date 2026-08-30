@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 from dataclasses import dataclass
+import os
 from pathlib import Path
 from typing import Any
 
@@ -15,7 +16,8 @@ class Account:
 
     @property
     def feed_url(self) -> str:
-        return self.url_template.format(handle=self.handle)
+        rsshub_base_url = os.environ.get("RSSHUB_BASE_URL", "https://rsshub.app").rstrip("/")
+        return self.url_template.format(handle=self.handle, rsshub_base_url=rsshub_base_url)
 
 
 @dataclass(frozen=True)
