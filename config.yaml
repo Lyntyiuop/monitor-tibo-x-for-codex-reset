@@ -1,0 +1,31 @@
+accounts:
+  - name: Tibo
+    handle: thsottiaux
+    url_template: "https://rsshub.app/twitter/user/{handle}"
+
+# Add more accounts like this:
+#  - name: OpenAI
+#    handle: OpenAI
+#    url_template: "https://rsshub.app/twitter/user/{handle}"
+
+keywords:
+  any:
+    - reset
+    - codex
+    - usage limit
+    - usage limits
+    - quota
+    - banked
+    - bank
+    - restore usage
+    - everyone's usage
+    - everybody's usage
+  required_any:
+    - codex
+    - usage
+    - reset
+
+classification:
+  enabled: false
+  model: gpt-5-mini
+  minimum_confidence: 0.7
